@@ -1,0 +1,304 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .attendance {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      width: 750px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    th {
+      background: #4facfe;
+      color: white;
+    }
+    select {
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .delete-btn {
+      background: #ff4d4d;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    .delete-btn:hover {
+      background: #cc0000;
+    }
+    .submit-btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: #00c6ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="attendance">
+    <h2>Class Attendance</h2>
+    <table id="attendanceTable">
+      <tr>
+        <th>Roll No</th>
+        <th>Student Name</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr> -->
+      
+      <!-- <tr><td>101</td><td>MALIK RIZWAN</td><td><select><option>Present</option><option>Absent</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>102</td><td>MUHAMMAD IBRAHIM</td><td><select><option>Present</option><option>Absent</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>103</td><td>IDRESS ABBASI</td><td><select><option>Present</option><option>Absent</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>104</td><td>M. UMAIR</td><td><select><option>Present</option><option>Absent</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>105</td><td>UMER HAMEED</td><td><select><option>Present</option><option>Absent</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>106</td><td>A. GHAFFAR</td><td><select><option>Present</option><option>Absent</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>107</td><td>SYED ROHAIL</td><td><select><option>Present</option><option>Absent</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+    </table>
+    <button class="submit-btn" onclick="submitAttendance()">Submit Attendance</button>
+    
+  </div> -->
+
+  <!-- <script> -->
+     <!-- Load students from localStorage -->
+    <!-- let students = JSON.parse(localStorage.getItem("students")) || [];
+    let table = document.getElementById("attendanceTable"); -->
+
+     <!-- Merge new students
+    students.forEach(student => {
+      if(student.name && student.roll) {
+        let row = table.insertRow(-1);
+        row.insertCell(0).innerText = student.roll;
+        row.insertCell(1).innerText = student.name;
+        row.insertCell(2).innerHTML = '<select><option>Present</option><option>Absent</option></select>';
+        row.insertCell(3).innerHTML = '<button class="delete-btn" onclick="deleteRow(this)">Delete</button>';
+      }
+    }); -->
+
+    <!-- Permanent delete
+    function deleteRow(button) {
+      let row = button.parentNode.parentNode;
+      let index = row.rowIndex - 1; // skip header
+      students.splice(index, 1);
+      localStorage.setItem("students", JSON.stringify(students));
+      row.parentNode.removeChild(row);
+    } -->
+
+
+     <!-- Submit attendance
+    function submitAttendance() {
+      let rows = document.querySelectorAll("#attendanceTable tr");
+      let result = [];
+      rows.forEach((row, index) => {
+        if(index === 0) return; // skip header
+        let roll = row.cells[0].innerText;
+        let name = row.cells[1].innerText;
+        let status = row.cells[2].querySelector("select").value;
+        result.push("Roll No: " + roll + " | " + name + " → " + status);
+      });
+      alert("✅ Attendance Submitted!\n\n" + result.join("\n"));
+    }
+   
+
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+    }
+    /* Navbar styling */
+    .navbar {
+      background: #333;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+      margin: 0 5px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .navbar a:hover {
+      background: #575757;
+    }
+    /* Attendance box */
+    .attendance {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      width: 750px;
+      margin: 40px auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+  
+    th {
+      background: #4facfe;
+      color: white;
+    }
+    select {
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .delete-btn {
+      background: #ff4d4d;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    .delete-btn:hover {
+      background: #cc0000;
+    }
+    .submit-btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: #00c6ff;
+    }
+    tr:hover td{
+      background-color: lightgoldenrodyellow
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+     <a href="HOME.html" class="btn">HOME</a>
+    <a href="Attendance.html" class="btn">Attendance</a>
+    <a href="ADDSTUDENT.html" class="btn">Add Student</a>
+    <a href="SUBJECT.html" class="btn">Subject</a>
+  </div>
+
+  <div class="attendance">
+    <h2>Class Attendance</h2>
+    <table id="attendanceTable">
+      <tr>
+        <th>Roll No</th>
+        <th>Student Name</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <!-- Pre-added students -->
+      <tr><td>101</td><td>MALIK RIZWAN</td><td><select><option>Present</option><option>Absent</option><option>Leave</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>102</td><td>MUHAMMAD IBRAHIM</td><td><select><option>Present</option><option>Absent</option><option>Leave</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>103</td><td>IDRESS ABBASI</td><td><select><option>Present</option><option>Absent</option><option>Leave</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>104</td><td>M. UMAIR</td><td><select><option>Present</option><option>Absent</option><option>Leave</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>105</td><td>UMER HAMEED</td><td><select><option>Present</option><option>Absent</option><option>Leave</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>106</td><td>A. GHAFFAR</td><td><select><option>Present</option><option>Absent</option><option>Leave</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+      <tr><td>107</td><td>SYED ROHAIL</td><td><select><option>Present</option><option>Absent</option><option>Leave</option></select></td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+    </table>
+    <button class="submit-btn" onclick="submitAttendance()">Submit Attendance</button>
+  </div>
+
+  <script>
+    // Load students from localStorage
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    let table = document.getElementById("attendanceTable");
+
+    // Merge new students
+    students.forEach(student => {
+      if(student.name && student.roll) {
+        let row = table.insertRow(-1);
+        row.insertCell(0).innerText = student.roll;
+        row.insertCell(1).innerText = student.name;
+        row.insertCell(2).innerHTML = '<select><option>Present</option><option>Absent</option></select>';
+        row.insertCell(3).innerHTML = '<button class="delete-btn" onclick="deleteRow(this)">Delete</button>';
+      }
+    });
+
+    // Permanent delete
+    function deleteRow(button) {
+      let row = button.parentNode.parentNode;
+      let roll = row.cells[0].innerText;
+      students = students.filter(s => s.roll !== roll);
+      localStorage.setItem("students", JSON.stringify(students));
+      row.parentNode.removeChild(row);
+    }
+
+    // Submit attendance
+    function submitAttendance() {
+      let rows = document.querySelectorAll("#attendanceTable tr");
+      let result = [];
+      rows.forEach((row, index) => {
+        if(index === 0) return; // skip header
+        let roll = row.cells[0].innerText;
+        let name = row.cells[1].innerText;
+        let status = row.cells[2].querySelector("select").value;
+        result.push("Roll No: " + roll + " | " + name + " → " + status);
+      });
+      alert("✅ Attendance Submitted!\n\n" + result.join("\n"));
+    }
+  </script>
+</body>
+</html>

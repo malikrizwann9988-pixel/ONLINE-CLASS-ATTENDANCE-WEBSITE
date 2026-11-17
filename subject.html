@@ -1,0 +1,275 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .form-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 500px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00c6ff;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    
+  </style>
+</head>
+<body>
+   
+  <div class="form-box">
+    <h2>Attendance Form</h2>
+    <form id="attendanceForm">
+      <label for="teacherName">Teacher Name:</label>
+      <input type="text" id="teacherName" placeholder="Enter teacher name">
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" placeholder="Enter subject">
+
+      <label for="department">Department:</label>
+      <select id="department">
+        <option value="CIT 1st Year">CIT 1st Year</option>
+        <option value="CIT 2nd Year">CIT 2nd Year</option>
+        <option value="CIT 3rd Year">CIT 3rd Year</option>
+        <option value="ET 1st Year">ET 1st Year</option>
+        <option value="ET 2nd Year">ET 2nd Year</option>
+        <option value="ET 3rd Year">ET 3rd Year</option>
+      </select>
+
+      <label for="present">Present Students:</label>
+      <input type="number" id="present" placeholder="Enter number of present students">
+
+      <label for="absent">Absent Students:</label>
+      <input type="number" id="absent" placeholder="Enter number of absent students">
+
+      <label for="leave">Leave Students:</label>
+      <input type="number" id="leave" placeholder="Enter number of leave students">
+
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div class="result" id="resultBox" style="display:none;"></div>
+  </div>
+
+  <script>
+    function submitForm() {
+      let teacher = document.getElementById("teacherName").value;
+      let subject = document.getElementById("subject").value;
+      let department = document.getElementById("department").value;
+      let present = document.getElementById("present").value;
+      let absent = document.getElementById("absent").value;
+      let leave = document.getElementById("leave").value;
+
+      let resultBox = document.getElementById("resultBox");
+      resultBox.style.display = "block";
+      resultBox.innerHTML = `
+        <h3>Attendance Summary</h3>
+        <p><b>Teacher:</b> ${teacher}</p>
+        <p><b>Subject:</b> ${subject}</p>
+        <p><b>Department:</b> ${department}</p>
+        <p><b>Present Students:</b> ${present}</p>
+        <p><b>Absent Students:</b> ${absent}</p>
+        <p><b>Leave Students:</b> ${leave}</p>
+      `;
+
+      alert("✅ Attendance Submitted!\n\nTeacher: " + teacher + "\nSubject: " + subject + "\nDepartment: " + department + "\nPresent: " + present + "\nAbsent: " + absent + "\nLeave: " + leave);
+    }
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+    }
+    /* Top navigation bar */
+    .navbar {
+      background: #333;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .navbar a:hover {
+      background: #575757;
+    }
+    /* Form box */
+    .form-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 500px;
+      margin: 40px auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00c6ff;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top navigation bar -->
+  <div class="navbar">
+     <a href="HOME.html" class="btn">HOME</a>
+    <a href="Attendance.html" class="btn">Attendance</a>
+     <a href="ADDSTUDENT.html" class="btn">Add Student</a> 
+     <a href="SUBJECT.html" class="btn">Subject </a>
+   
+  </div>
+
+  <!-- Attendance Form -->
+  <div class="form-box">
+    <h2>Attendance Form</h2>
+    <form id="attendanceForm">
+      <label for="teacherName">Teacher Name:</label>
+      <input type="text" id="teacherName" placeholder="Enter teacher name">
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" placeholder="Enter subject">
+
+      <label for="department">Department:</label>
+      <select id="department">
+        <option value="CIT 1st Year">CIT 1st Year</option>
+        <option value="CIT 2nd Year">CIT 2nd Year</option>
+        <option value="CIT 3rd Year">CIT 3rd Year</option>
+        <option value="ET 1st Year">ET 1st Year</option>
+        <option value="ET 2nd Year">ET 2nd Year</option>
+        <option value="ET 3rd Year">ET 3rd Year</option>
+      </select>
+
+      <label for="present">Present Students:</label>
+      <input type="number" id="present" placeholder="Enter number of present students">
+
+      <label for="absent">Absent Students:</label>
+      <input type="number" id="absent" placeholder="Enter number of absent students">
+
+      <label for="leave">Leave Students:</label>
+      <input type="number" id="leave" placeholder="Enter number of leave students">
+
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div class="result" id="resultBox" style="display:none;"></div>
+  </div>
+
+  <script>
+    function submitForm() {
+      let teacher = document.getElementById("teacherName").value;
+      let subject = document.getElementById("subject").value;
+      let department = document.getElementById("department").value;
+      let present = document.getElementById("present").value;
+      let absent = document.getElementById("absent").value;
+      let leave = document.getElementById("leave").value;
+
+      let resultBox = document.getElementById("resultBox");
+      resultBox.style.display = "block";
+      resultBox.innerHTML = `
+        <h3>Attendance Summary</h3>
+        <p><b>Teacher:</b> ${teacher}</p>
+        <p><b>Subject:</b> ${subject}</p>
+        <p><b>Department:</b> ${department}</p>
+        <p><b>Present Students:</b> ${present}</p>
+        <p><b>Absent Students:</b> ${absent}</p>
+        <p><b>Leave Students:</b> ${leave}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
+

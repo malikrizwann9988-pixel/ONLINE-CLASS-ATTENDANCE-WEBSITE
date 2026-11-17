@@ -1,0 +1,188 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .form-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00c6ff;
+    }
+    </style>
+        
+      <div class="form-box">
+         <h2>Add New Student</h2> 
+         <label for="studentName">Student Name:</label> 
+         <input type="text" id="studentName" placeholder="Enter student name"> 
+         <label for="rollNo">Roll Number:</label>
+          <input type="text" id="rollNo" placeholder="Enter roll number"> 
+          <button onclick="addStudent()">Add Student</button>
+         </div>
+      
+                          <script> 
+                          function addStudent() { 
+                            let name = document.getElementById("studentName").value;
+                             let roll = document.getElementById("rollNo").value; 
+                             if(name && roll) {
+                               let students = JSON.parse(localStorage.getItem("students")) || []; 
+                               students.push({name: name, roll: roll}); 
+                               localStorage.setItem("students", JSON.stringify(students)); 
+                               alert("🎉 Student " + name + " (Roll No: " + roll + ") added successfully!");
+                                document.getElementById("studentName").value = "";
+                                 document.getElementById("rollNo").value = ""; 
+                                 } else {
+                                   alert("❌ Please enter both name and roll number!");
+                                    } 
+                                    } 
+                                    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Student</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+    }
+    /* Navbar styling */
+    .navbar {
+      background: #333;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+      margin: 0 5px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .navbar a:hover {
+      background: #575757;
+    }
+    /* Form styling */
+    .form-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+      margin: 40px auto;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #4facfe;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00c6ff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="HOME.html" class="btn">HOME</a>
+    <a href="Attendance.html" class="btn">Attendance</a>
+    <a href="ADDSTUDENT.html" class="btn">Add Student</a>
+    <a href="SUBJECT.html" class="btn">Subject</a>
+  </div>
+
+  <!-- Form -->
+  <div class="form-box">
+    <h2>Add New Student</h2> 
+    <label for="studentName">Student Name:</label> 
+    <input type="text" id="studentName" placeholder="Enter student name"> 
+    <label for="rollNo">Roll Number:</label>
+    <input type="text" id="rollNo" placeholder="Enter roll number"> 
+    <button onclick="addStudent()">Add Student</button>
+  </div>
+
+  <script> 
+    function addStudent() { 
+      let name = document.getElementById("studentName").value;
+      let roll = document.getElementById("rollNo").value; 
+      if(name && roll) {
+        let students = JSON.parse(localStorage.getItem("students")) || []; 
+        students.push({name: name, roll: roll}); 
+        localStorage.setItem("students", JSON.stringify(students)); 
+        alert("🎉 Student " + name + " (Roll No: " + roll + ") added successfully!");
+        document.getElementById("studentName").value = "";
+        document.getElementById("rollNo").value = ""; 
+      } else {
+        alert("❌ Please enter both name and roll number!");
+      } 
+    } 
+  </script>
+</body>
+</html>
